@@ -7,7 +7,7 @@ export interface IApiService {
   solutionDetails(): Observable<any>;
   prospectTask(userId: string): Observable<any>;
   prospectSolutionDetails(userId: string): Observable<any>;
-  solutionCrew(userId: string): Observable<any>;
+  solutionCrew(userId: string);
   solutionTimeline(): Observable<any>;
   verifyUser(userName: string, key: string): Observable<any>;
   verifyEmail(code: string, key: string): Observable<any>;

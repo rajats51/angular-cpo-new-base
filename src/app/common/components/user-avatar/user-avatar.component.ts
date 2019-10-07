@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { ApiService } from '../../services/api-service/api.service';
+//import { ApiService } from '../../services/api-service/api.service';
 import { Crew } from '../../../products/crew/crew.component';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -39,7 +39,7 @@ export class UserAvatarComponent implements OnInit {
     }
 
   ];
-  constructor(private apiService: ApiService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(
       'client',
       sanitizer.bypassSecurityTrustResourceUrl('../../assets/icons/blue-crew.svg'));
@@ -52,13 +52,60 @@ export class UserAvatarComponent implements OnInit {
     this.getSolutionCrew();
   }
 
+
+
   getSolutionCrew() {
-    this.apiService.solutionCrew(this.userId).subscribe(
+    this.crewUsers = [
+      {
+        "name": "Susan Matthews",
+        "role": "Regional Manager",
+        //"imageName_1":"CrewAvatar1.svg",
+        "imageName": "https://user-images.githubusercontent.com/263237/36633897-d3237f2e-19ad-11e8-960a-daaf5ca3088a.png",
+        "subImageName": "./images/icons/orange-crew.svg"
+      },
+      {
+        "name": "Susan Matthews",
+        "role": "Regional Manager",
+        //"imageName_1":"CrewAvatar1.svg",
+        "imageName": "https://user-images.githubusercontent.com/263237/36633897-d3237f2e-19ad-11e8-960a-daaf5ca3088a.png",
+        "subImageName": "./images/icons/orange-crew.svg"
+      },
+      {
+        "name": "Susan Matthews",
+        "role": "Regional Manager",
+        //"imageName_1":"CrewAvatar1.svg",
+        "imageName": "https://user-images.githubusercontent.com/263237/36633897-d3237f2e-19ad-11e8-960a-daaf5ca3088a.png",
+        "subImageName": "./images/icons/orange-crew.svg"
+      },
+      {
+        "name": "Susan Matthews",
+        "role": "Regional Manager",
+        //"imageName_1":"CrewAvatar1.svg",
+        "imageName": "https://user-images.githubusercontent.com/263237/36633897-d3237f2e-19ad-11e8-960a-daaf5ca3088a.png",
+        "subImageName": "./images/icons/orange-crew.svg"
+      },
+      {
+        "name": "Susan Matthews",
+        "role": "Regional Manager",
+        //"imageName_1":"CrewAvatar1.svg",
+        "imageName": "https://user-images.githubusercontent.com/263237/36633897-d3237f2e-19ad-11e8-960a-daaf5ca3088a.png",
+        "subImageName": "./images/icons/orange-crew.svg"
+      },
+      {
+        "name": "Susan Matthews",
+        "role": "Regional Manager",
+        //"imageName_1":"CrewAvatar1.svg",
+        "imageName": "https://user-images.githubusercontent.com/263237/36633897-d3237f2e-19ad-11e8-960a-daaf5ca3088a.png",
+        "subImageName": "./images/icons/orange-crew.svg"
+      }
+    ];
+    this.rederStyles(this.crewUsers, this.crewUsers.length);
+    /*this.apiService.solutionCrew(this.userId).subscribe(
       response => {
         this.crewUsers = response;
         this.rederStyles(this.crewUsers, this.crewUsers.length);
       },
-      error => { });
+      error => { }); */
   }
 
   getShortName(name) {

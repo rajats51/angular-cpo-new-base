@@ -1,7 +1,7 @@
 {
   "name": "angular",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/router": "^8.0.0",
     "core-js": "2",
