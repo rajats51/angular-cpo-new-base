@@ -1,0 +1,46 @@
+// Use this file to define all global SASS variables
+// This file can be imported into any component stylesheet as necessary,
+// and should be the only place where these global variables are defined
+
+// COLORS
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-lt: #eaeaea;
+$color-gray-dr: #cbcfd2;
+$color-green: #6bb536;
+$color-red: #ce0000;
+$color-blue: #0068ac;
+$color-blue-lt: #3ec7ff;
+$color-blue-gradient-end: #00a1d6;
+$color-blue-rg: #0068ac;
+$color-blue-dr: #00518a;
+$color-orange-dr: #ec6c00;
+$color-green-lt: #d0eabe;
+$color-gray: #5a6771;
+$color-disabled: rgba(0, 0, 0, 0.54);
+// BORDER
+
+// DSM COLORS
+
+// Generic
+$dsm-blue: #0068ac;
+$dsm-light-blue: #3ec7ff;
+$dsm-dark-gray: #9b9b9b;
+$dsm-green: #6bb536;
+$dsm-orange: #ec6c00;
+$dsm-red: #ce0000;
+
+// CPO
+$pnc-dark-blue: #00518a;
+$pnc-blue: $dsm-blue;
+$pnc-light-blue: $dsm-light-blue;
+$pnc-orange: $dsm-orange;
+$pnc-red: $dsm-red;
+$pnc-black: #000000;
+$pnc-white: #ffffff;
+$pnc-light-gray: #eaeaea;
+$pnc-gray: #cbcfd2;
+$pnc-dark-gray: $dsm-dark-gray;
+$pnc-light-green: #cde5c3;
+$pnc-green: $dsm-green;
+

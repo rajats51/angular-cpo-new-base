@@ -1,0 +1,261 @@
+@import "~@angular/material/theming";
+@import "_variables";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$pnc-palette-blue: (50: $pnc-light-blue,
+  100: $pnc-light-blue,
+  200: $pnc-light-blue,
+  300: $pnc-light-blue,
+  400: $pnc-blue,
+  500: $pnc-blue,
+  600: $pnc-blue,
+  700: $pnc-dark-blue,
+  800: $pnc-dark-blue,
+  900: $pnc-dark-blue,
+  A100: $pnc-light-blue,
+  A200: $pnc-light-blue,
+  A400: $pnc-light-blue,
+  A700: $pnc-light-blue,
+  contrast: (50: $pnc-white,
+    100: $pnc-white,
+    200: $pnc-white,
+    300: $pnc-white,
+    400: $pnc-white,
+    500: $pnc-white,
+    600: $pnc-white,
+    700: $pnc-white,
+    800: $pnc-white,
+    900: $pnc-white,
+    A100: $pnc-white,
+    A200: $pnc-white,
+    A400: $pnc-white,
+    A700: $pnc-white));
+
+$pnc-palette-white: (50: $pnc-white,
+  100: $pnc-white,
+  200: $pnc-white,
+  300: $pnc-white,
+  400: $pnc-white,
+  500: $pnc-white,
+  600: $pnc-white,
+  700: $pnc-white,
+  800: $pnc-white,
+  900: $pnc-white,
+  A100: $pnc-white,
+  A200: $pnc-white,
+  A400: $pnc-white,
+  A700: $pnc-white,
+  contrast: (50: $pnc-white,
+    100: $pnc-white,
+    200: $pnc-white,
+    300: $pnc-white,
+    400: $pnc-white,
+    500: $pnc-white,
+    600: $pnc-white,
+    700: $pnc-white,
+    800: $pnc-white,
+    900: $pnc-white,
+    A100: $pnc-white,
+    A200: $pnc-white,
+    A400: $pnc-white,
+    A700: $pnc-white));
+
+$pnc-palette-red: (50: $pnc-red,
+  100: $pnc-red,
+  200: $pnc-red,
+  300: $pnc-red,
+  400: $pnc-red,
+  500: $pnc-red,
+  600: $pnc-red,
+  700: $pnc-red,
+  800: $pnc-red,
+  900: $pnc-red,
+  A100: $pnc-red,
+  A200: $pnc-red,
+  A400: $pnc-red,
+  A700: $pnc-red,
+  contrast: (50: $pnc-red,
+    100: $pnc-red,
+    200: $pnc-red,
+    300: $pnc-red,
+    400: $pnc-red,
+    500: $pnc-red,
+    600: $pnc-red,
+    700: $pnc-red,
+    800: $pnc-red,
+    900: $pnc-red,
+    A100: $pnc-red,
+    A200: $pnc-red,
+    A400: $pnc-red,
+    A700: $pnc-red));
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$pnc-app-primary: mat-palette($pnc-palette-blue);
+$pnc-app-accent: mat-palette($pnc-palette-blue);
+
+// The warn palette is optional (defaults to red).
+$pnc-app-warn: mat-palette($pnc-palette-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$pnc-app-theme: mat-light-theme($pnc-app-primary, $pnc-app-accent, $pnc-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($pnc-app-theme);
+
+$pnc-app-inverse-primary: mat-palette($pnc-palette-white);
+$pnc-app-inverse-accent: mat-palette($pnc-palette-white);
+$pnc-app-inverse-warn: mat-palette($pnc-palette-white);
+
+$pnc-app-inverse-theme: mat-light-theme($pnc-app-inverse-primary, $pnc-app-inverse-accent, $pnc-app-inverse-warn);
+
+$pnc-typography: mat-typography-config($font-family: 'PNC Brand');
+@include mat-core($pnc-typography);
+
+.blue-bg {
+  @include angular-material-theme($pnc-app-inverse-theme);
+  background: linear-gradient(225deg, $color-blue-gradient-end 0%, $color-blue 100%);
+
+  .mat-input-element,
+  .mat-select-value {
+    color: $pnc-white;
+  }
+
+  .mat-button.navigation-button {
+    border-color: $pnc-white;
+  }
+
+  .mat-select-arrow,
+  .mat-button.navigation-button {
+    &::after {
+      color: $pnc-white;
+    }
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-label,
+  .mat-form-field-label {
+    color: $pnc-white;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline,
+  .mat-form-field-underline {
+    border-bottom: 1px solid $pnc-white;
+  }
+
+  .mat-form-field-disabled,
+  &.mat-form-field-disabled {
+    &.mat-form-field-appearance-legacy .mat-form-field-underline {
+      border-bottom: none;
+      background-image: linear-gradient(to right, $pnc-gray 40%, rgba(255, 255, 255, 0) 20%);
+      background-position: top;
+      background-size: 4px 1px;
+      background-repeat: repeat-x;
+    }
+
+    &.mat-form-field-appearance-legacy .mat-form-field-label {
+      color: $pnc-gray;
+    }
+  }
+
+  .mat-form-field-disabled {
+    .mat-select-arrow {
+      &::after {
+        color: $pnc-gray;
+      }
+    }
+
+    .mat-select-value-text {
+      color: $pnc-gray;
+    }
+  }
+
+  .mat-form-field-invalid.mat-form-field-appearance-legacy .mat-form-field-underline,
+  .mat-form-field-invalid .mat-form-field-underline {
+    border-bottom: 1px solid $pnc-red;
+  }
+
+  .mat-form-field-invalid .mat-form-field-ripple {
+    background-color: $pnc-red !important;
+  }
+
+  .mat-form-field-invalid .mat-select.mat-select-invalid .mat-select-arrow {
+    color: $pnc-red;
+  }
+
+  .mat-tab-label {
+    color: $pnc-white;
+  }
+
+  .mat-tab-header-pagination-chevron {
+    border-color: $color-white;
+  }
+
+  .mat-datepicker-toggle {
+    color: $pnc-white !important;
+  }
+
+  .mat-checkbox {
+    .mat-checkbox-frame {
+      border-color: $pnc-white !important;
+    }
+
+    .mat-checkbox-label {
+      color: $pnc-white;
+    }
+
+    &.mat-checkbox-checked {
+      .mat-checkbox-background {
+        .mat-checkbox-checkmark-path {
+          stroke: $pnc-blue !important;
+        }
+      }
+
+      &.mat-checkbox-disabled {
+        .mat-checkbox-background {
+          background-color: $pnc-gray !important;
+        }
+
+        .mat-checkbox-label {
+          color: $pnc-gray !important;
+        }
+      }
+    }
+
+    &.mat-checkbox-disabled {
+      .mat-checkbox-label {
+        color: $pnc-gray !important;
+      }
+
+      .mat-checkbox-frame {
+        border-color: $pnc-gray !important;
+      }
+    }
+  }
+
+  .checkbox-helper {
+    color: $pnc-white;
+  }
+
+  .radio-group-label {
+    color: $pnc-white;
+  }
+
+  .mat-radio-label {
+    .mat-radio-label-content {
+      color: $pnc-white;
+    }
+  }
+}
+
+@import "_accordion";
+@import "_button";
+@import "_input";
+@import "_scrollingDropdown";

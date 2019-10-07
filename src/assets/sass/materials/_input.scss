@@ -1,0 +1,44 @@
+@import "./_variables";
+
+// Place any input-only related custom styles here.
+
+/* workaround for https://github.com/angular/material2/issues/15093 */
+:-ms-input-placeholder.mat-input-element {
+  -ms-user-select: text !important;
+}
+
+.mat-form-field {
+  .mat-input-element {
+    line-height: 1rem;
+  }
+}
+
+.cpo-input {
+  transition: all 0.3s;
+
+  .mat-form-field-label {
+    @include font-weight(medium);
+    @include font-size(18);
+    @include line-height(18);
+  }
+
+  .mat-input-element {
+    @include font-size(18);
+    @include font-weight(normal);
+    @include line-height(18);
+    letter-spacing: 1.08px;
+    margin: 10px 0;
+  }
+
+  .mat-form-field-underline,
+  .mat-form-field-ripple {
+    height: 2px !important;
+  }
+
+  &.mat-form-field-should-float {
+    .mat-form-field-label {
+      @include font-weight(normal);
+    }
+  }
+}
+

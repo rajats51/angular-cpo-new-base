@@ -1,0 +1,122 @@
+@import "./_variables";
+.mat-expansion-panel-header,
+.mat-expansion-panel-content {
+  font: inherit;
+}
+
+.mat-expansion-panel-header {
+  sup {
+    top: 5px;
+  }
+}
+
+.centered-fixed-width {
+  mat-expansion-panel {
+    max-width: 460px;
+    margin: auto;
+  }
+}
+
+.right-sided-accordion,
+.left-sided-accordion {
+  .mat-expansion-panel {
+    box-shadow: none;
+    &.mat-expanded {
+      .mat-expansion-indicator {
+        margin-top: 13px;
+      }
+    }
+    .mat-expansion-panel-header {
+      padding: 0 2px;
+    }
+    .mat-content {
+      flex-direction: row-reverse;
+      .mat-expansion-panel-header-title {
+        flex-grow: 0;
+        color: $pnc-blue;
+        font-size: 12px;
+        line-height: 16px;
+        padding-top: 10px;
+        margin-right: 7px;
+      }
+    }
+    .mat-expansion-indicator::after {
+      color: $pnc-blue;
+    }
+    .mat-expansion-panel-content{
+      .mat-expansion-panel-body{
+        padding:0;
+      }
+    }
+  }
+}
+
+.left-sided-accordion {
+  .mat-expansion-panel {
+    .mat-content {
+      flex: 0 0 auto;
+      flex-direction: row;
+    }
+  }
+}
+
+.custom-accordion {
+  &.disable {
+    .mat-expansion-panel-header {
+      .title {
+        color: $pnc-gray;
+      }
+      .expand-icon {
+        cursor: default;
+      }
+    }
+  }
+  .mat-expansion-panel {
+    box-shadow: none !important;
+    border: 2px solid $pnc-gray;
+    margin-bottom: 20px;
+  }
+  .mat-expansion-panel.mat-expanded {
+    .expand-icon {
+      .icon_plus_circle_35 {
+        transform: rotate(45deg);
+        top: -8.5px;
+        left: 9.5px;
+      }
+    }
+  }
+  .mat-expansion-panel-header {
+    cursor: default;
+    padding: 20px 24px;
+    .title {
+      color: $pnc-black;
+      margin-left: 15px;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .link {
+      margin-top: 5px;
+      margin-left: auto;
+      a.btn {
+        font-size: 0.9rem;
+        padding: 0;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  .expand-icon {
+    cursor: pointer;
+    .icon_plus_circle_35 {
+      height: 35px;
+      width: 35px;
+      display: inline-block;
+    }
+  }
+  .switch {
+    margin-left: auto;
+  }
+}
+

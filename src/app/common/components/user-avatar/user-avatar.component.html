@@ -1,0 +1,20 @@
+<div #container class="crew-members">
+	<ul #circleContainer class="circle-container circle" id="circle">
+		<li *ngFor="let crew of crewUsers; let ind= index" [ngStyle]="{'transform': crew.liTransform}"
+			[ngClass]="{'placeholder-circle': !items[ind].imageName}"
+			class="circle-container wrapper {{crew.elementClass}}">
+			<img class="crew-image" [src]="items[ind].imageName" [alt]="items[ind].image_id" *ngIf="items[ind].imageName && items[ind].imageName !== ''">
+			<div class="crew-image"
+				[ngClass]="{'pnc-no-image': crew.org === 'INT',  'client-no-image': crew.org !== 'INT'}"
+				*ngIf="!items[ind].imageName || items[ind].imageName === ''"><span>{{crew.shortName}}</span></div>
+
+			<mat-icon id="star_icon_{{ind}}" matSuffix
+				*ngIf="crew.org !== '' && items[ind].imageName && items[ind].imageName!== '' " class="star-icon"
+				svgIcon="{{crew.org === 'INT' ? 'pnc' : 'client'}}"></mat-icon>
+			<div class="text-name">
+				<h5 class="crew-name" id="crew-name"> {{crew.name}} </h5>
+				<h6 class="crew-role" id="crew-role"> {{crew.role}} </h6>
+			</div>
+		</li>
+	</ul>
+</div>
